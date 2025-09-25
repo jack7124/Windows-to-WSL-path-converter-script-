@@ -1,0 +1,33 @@
+# This is an explanation file for using my convert_w_path script.
+
+
+
+# First off, do not run the script first. You need to change some 
+# file permissions and update the location of the command. 
+
+
+# 1. Make the script executable 
+## 	1. To do this, you will use chmod +x. Chmod changes file permissions and +x adds the executable permission.
+##      2. chmod +x convert_W_path.sh 
+
+
+
+# 2. Add to system PATH to allow global use 
+## 	1. Move your script to the bin directory
+##	  A. If you don't have a bin directory, make one in your home directory
+##          * cd ~
+##	    * mkdir -p ~/bin
+## 	  B. mv convert_W_path.sh ~/bin
+
+
+
+# 3. Add ~/bin to the PATH environment variable, bashrc
+##	1. Echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+
+
+# 4. Reload bashrc to apply changes to current terminal session
+##	1. source ~/.bashrc
+
+# Now you can run convert_w_path.sh in any directory.
+# The final output after running the script should be an echo of the /mnt path which WSL finds friendly. 
+ 
