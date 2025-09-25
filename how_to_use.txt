@@ -22,7 +22,7 @@
 
 
 # 3. Add ~/bin to the PATH environment variable, bashrc
-##	1. Echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+##	1. echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 
 
 # 4. Reload bashrc to apply changes to current terminal session
@@ -30,4 +30,10 @@
 
 # Now you can run convert_w_path.sh in any directory.
 # The final output after running the script should be an echo of the /mnt path which WSL finds friendly. 
- 
+
+# USE QUOTES AROUND THE FILE PATH! 
+# ex: convert_w_path.sh "C:\Users\user\OneDrive\Documents\cool_repo"
+# output: /mnt/c/Users/user/OneDrive/Documents/cool_repo
+# usage: cd /mnt/c/Users/user/OneDrive/Documents/cool_repo
+
+# Enjoy some more workflow efficency for using WSL :)
