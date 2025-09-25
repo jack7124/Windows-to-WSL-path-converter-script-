@@ -1,0 +1,38 @@
+# OPTIONAL: Automate usage so that the converted path is auto changed into once path is provided, one command
+# Manual validation is still usable using the example command block above
+# DO NOT USE BEFORE FINISHING SET UP IN how_to_use.txt.
+# This is only copied and pasted from that file
+#^^^^^^^^^^^^^
+## Creating a cd function in bash.rc
+## 1. open bash.rc using nano
+###     A. nano ~/.bashrc
+
+## 2. Add the following function to the bottom of the file BELOW the export path line we added earlier
+
+# wcd is the name of our shell function we're creating
+wcd() {
+  # This tests if the length is zero using -z. That tests our first arg, the Windows path
+  if [ -z "$1" ]; then
+    echo "Error: Please provide a Windows path in quotes."
+  else
+    # Run your script and capture its output
+    # Local declares wsl_path as only accessible in this function
+    # $(...) This runs the interior () command and uses it as output for the wsl_path variable
+    local wsl_path=$(convert_W_path.sh "$1")
+    # Change directory to the converted path
+    cd "$wsl_path"
+  fi
+}
+
+## usage: wcd "C:\Users\user\OneDrive\Documents\cool_repo"
+## Result: you are put into the directory.
+### Why use this: The manual validation requires three distinct actions:
+        # 1. Use the .sh command to echo the /mnt path
+        # 2. copy the echo'd path
+        # 3. cd into the echo'd path directory
+### This automated command is all in one. You simply copy and paste the path, then you are automatically routed into that directory's path
+
+# This does NOT make new directories, it only combines the manual validation functions to route into the same /mnt path.
+# Reminder that manual validation is still able to be used even if you create this wcd command!
+
+# Enjoy some workflow efficiency :)
