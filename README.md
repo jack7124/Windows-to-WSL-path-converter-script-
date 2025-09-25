@@ -1,2 +1,4 @@
 # Windows-to-WSL-path-converter-script-
 Bash script for converting Windows path addresses to WSL /mnt paths. I created this for my Bioinformatics class after realizing a common workflow roadblock: manually typing in /mnt pathways when windows copies their path addresses in their own format. WSL is not able to cd to windows paths, only /mnt pathways, so you cannot copy a window's path from documents or some other folder and paste that path into a CD command. The simple script, when called, echo's the /mnt path from the windows path address. From there, the user can simply copy the echo'd path and paste that into a CD command. 
+
+There is also an optional automated command which reduces the total amount of actions compared to the manual validation of the script. Both options remain usable if the automated method is installed. 
