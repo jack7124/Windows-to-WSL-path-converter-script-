@@ -9,7 +9,7 @@
 # The first **echo** command prints the first arg provided, our W-path
 # The **sed** command uses the printed output from echo
 ## The sed command makes two substitutions.
-### 1. s/\\/\//g replaces every backslash with a forward slash
+### 1. s/\\/\//g replaces every backslash with a forward slash, using / as the delimeter and g applies a global flag
 #### This properly adjusts the slash formatting 
 ### 2. s/^\(.\):/\/mnt\/\L\1/ replaces the drive letter and colon
 ###    with /mnt/c   
